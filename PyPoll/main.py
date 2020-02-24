@@ -1,29 +1,36 @@
 import os
 import csv
+import pandas as pd
+from collections import OrderedDict
 
-totalnum_votes = [0]
+total_votes = 0
 # candidate_lst = []
 # candidate_pct = []
 # total_votes_won = []
 # winner_elect = []
 
-
-
 with open('Resources/election_data.csv', 'r') as csvfile:
-	poll_reader = csv.reader(csvfile, delimiter=',')
-	next(poll_reader)
-	election_data = list(poll_reader)
- 
- # total number of votes
-# totalnum_votes = len(poll_reader([2])
+	pollreader = csv.reader(csvfile, delimiter=',')
+	next(pollreader)
+	
+	for row in pollreader:
+		total_votes += 1
+ 	
+    	if row[2] == "Khan": 
+     	votes_khan += 1	
+      
+    	elif row[2] == "Correy":
+      	votes_correy += 1
+    
+    	elif row[2] == "Li":
+      	votes_li += 1
+      
+    	elif row[2] == "O'Tooley":
+      	votes_otooley += 1
          
-for row in election_data:
-    print(row)
-#   print(row[0])
-#   print(row[0],row[1],row[2],)
-
-
-
+candidate_totals = [votes_correy, votes_otooley, votes_khan, votes_li]
+print(candidate_totals)
+    
 
 
 # Report
@@ -33,15 +40,3 @@ for row in election_data:
 
 #print(f"Total Profits and Losses:${total_pnl}")
 #print(f"Average Change Per month:{avgchg_mth}") 
-	
-
-
-
-
-
-
-
-
-
-
-

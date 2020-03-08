@@ -14,7 +14,7 @@ pct_khan = 0.000
 pct_li = 0.000
 pct_otooley = 0.000
 #reading the csv
-with open ('/Users/Mac/Desktop/python-challenge/PyPoll/Resources/election_data.csv','r') as csvfile:
+with open ('Resources/election_data.csv','r') as csvfile:
     pollreader = csv.reader(csvfile,delimiter=',')
     next(pollreader)
     for row in pollreader:
